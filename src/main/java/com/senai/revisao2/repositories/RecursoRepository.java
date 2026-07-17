@@ -1,4 +1,8 @@
 package com.senai.revisao2.repositories;
 
-public interface RecursoRepository {
+import com.senai.revisao2.entities.RecursoEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RecursoRepository extends JpaRepository<RecursoEntity, Long> {
+
 }

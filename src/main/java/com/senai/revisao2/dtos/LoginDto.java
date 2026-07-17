@@ -3,7 +3,6 @@ package com.senai.revisao2.dtos;
 public class LoginDto {
 
     private String email;
-
     private String senha;
 
     public LoginDto() {

@@ -1,14 +1,16 @@
 package com.senai.revisao2.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "recurso")
 public class RecursoEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String descricao;
@@ -21,9 +23,9 @@ public class RecursoEntity {
 
     private LocalDate dataFinalAgendamento;
 
-    private LocalDate horaInicialAgendamento;
+    private LocalTime horaInicialAgendamento;
 
-    private LocalDate horaFinalAgendamento;
+    private LocalTime horaFinalAgendamento;
 
     public RecursoEntity() {
     }
@@ -76,19 +78,19 @@ public class RecursoEntity {
         this.dataFinalAgendamento = dataFinalAgendamento;
     }
 
-    public LocalDate getHoraInicialAgendamento() {
+    public LocalTime getHoraInicialAgendamento() {
         return horaInicialAgendamento;
     }
 
-    public void setHoraInicialAgendamento(LocalDate horaInicialAgendamento) {
+    public void setHoraInicialAgendamento(LocalTime horaInicialAgendamento) {
         this.horaInicialAgendamento = horaInicialAgendamento;
     }
 
-    public LocalDate getHoraFinalAgendamento() {
+    public LocalTime getHoraFinalAgendamento() {
         return horaFinalAgendamento;
     }
 
-    public void setHoraFinalAgendamento(LocalDate horaFinalAgendamento) {
+    public void setHoraFinalAgendamento(LocalTime horaFinalAgendamento) {
         this.horaFinalAgendamento = horaFinalAgendamento;
     }
 }

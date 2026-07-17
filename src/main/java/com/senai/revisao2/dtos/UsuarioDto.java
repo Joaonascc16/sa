@@ -1,5 +1,4 @@
 package com.senai.revisao2.dtos;
-
 import java.time.LocalDate;
 
 public class UsuarioDto {

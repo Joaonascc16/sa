@@ -1,5 +1,4 @@
 package com.senai.revisao2.controllers;
-
 import com.senai.revisao2.dtos.*;
 import com.senai.revisao2.services.UsuarioService;
 import jakarta.validation.Valid;

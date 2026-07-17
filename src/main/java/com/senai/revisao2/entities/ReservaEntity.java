@@ -1,7 +1,6 @@
 package com.senai.revisao2.entities;
 
 import jakarta.persistence.*;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 
@@ -9,13 +8,15 @@ import java.time.LocalDate;
 @Table(name = "reserva")
 public class ReservaEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "colaborador_id")
     private UsuarioEntity colaborador;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "recurso_id")
     private RecursoEntity recurso;
 
@@ -29,12 +30,12 @@ public class ReservaEntity {
 
     private String observacao;
 
-    public RecursoEntity getRecurso() {
-        return recurso;
+    public Long getId() {
+        return id;
     }
 
-    public void setRecurso(RecursoEntity recurso) {
-        this.recurso = recurso;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public UsuarioEntity getColaborador() {
@@ -45,5 +46,51 @@ public class ReservaEntity {
         this.colaborador = colaborador;
     }
 
+    public RecursoEntity getRecurso() {
+        return recurso;
+    }
 
+    public void setRecurso(RecursoEntity recurso) {
+        this.recurso = recurso;
+    }
+
+    public LocalDate getDataReserva() {
+        return dataReserva;
+    }
+
+    public void setDataReserva(LocalDate dataReserva) {
+        this.dataReserva = dataReserva;
+    }
+
+    public LocalDate getHoraInicial() {
+        return horaInicial;
+    }
+
+    public void setHoraInicial(LocalDate horaInicial) {
+        this.horaInicial = horaInicial;
+    }
+
+    public LocalDate getHoraFinal() {
+        return horaFinal;
+    }
+
+    public void setHoraFinal(LocalDate horaFinal) {
+        this.horaFinal = horaFinal;
+    }
+
+    public LocalDate getDataCancelamento() {
+        return dataCancelamento;
+    }
+
+    public void setDataCancelamento(LocalDate dataCancelamento) {
+        this.dataCancelamento = dataCancelamento;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 }
