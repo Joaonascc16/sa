@@ -20,13 +20,12 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public String realizarLogin(String email, String senha,
-                                Model model, RedirectAttributes redirectAttributes){
+    public String realizarLogin(String email, String senha, Model model, RedirectAttributes redirectAttributes){
 
         //--Criação de objeto dto para enviara dados para o service
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setEmail(email);
-        usuarioDto.setSenha(senha);
+
 
         //--Realiza login no banco de dados
         UsuarioDto usuarioDtoRetorno = service.realizarLogin(usuarioDto);
